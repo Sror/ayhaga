@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>D387ED46-A1CD-4CF4-BFB4-0CEAC8465F43</string>
+	<key>IDESourceControlProjectName</key>
+	<string>RefofDemo</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>0C8B349F-842F-44CF-944F-FE6709FB4E20</key>
+		<string>http://tfs.afec.org:81/svn/IOS/Rofouf/trunk</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>RefofDemo.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>0C8B349F-842F-44CF-944F-FE6709FB4E20</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectRepositoryRootDictionary</key>
+	<dict>
+		<key>0C8B349F-842F-44CF-944F-FE6709FB4E20</key>
+		<string>http://tfs.afec.org:81/svn/IOS</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>http://tfs.afec.org:81/svn/IOS/Rofouf/trunk/RefofDemo.xcodeproj</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>0C8B349F-842F-44CF-944F-FE6709FB4E20</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryBranchesRelativeLocationKey</key>
+			<string>Rofouf/branches</string>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.subversion</string>
+			<key>IDESourceControlRepositoryTagsRelativeLocationKey</key>
+			<string>Rofouf/tags</string>
+			<key>IDESourceControlRepositoryTrunkRelativeLocationKey</key>
+			<string>Rofouf/trunk</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>0C8B349F-842F-44CF-944F-FE6709FB4E20</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Rofouf</string>
+		</dict>
+	</array>
+</dict>
+</plist>

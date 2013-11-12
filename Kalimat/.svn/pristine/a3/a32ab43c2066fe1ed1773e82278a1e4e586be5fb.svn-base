@@ -1,0 +1,1061 @@
+/*********************************************************************************************
+				                     epub books style
+**********************************************************************************************/
+/*********************************************************************************************
+				                     reset style start
+**********************************************************************************************/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, tt, var, dl, dt, dd, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+	border: 0px;
+	font-family: inherit;
+	font-size: 100%;
+	font-style: inherit;
+	font-weight: normal;
+	margin: 0px;
+	outline: 0px none;
+	padding: 0px;
+	vertical-align: baseline;
+}
+html {
+	direction: ltr;
+}
+:focus {
+	outline: 0px none;
+}
+html body {
+	background: none repeat scroll 0% 0% ;
+	line-height: 1;
+}
+ul {
+	list-style: none outside none;
+}
+table {
+	border-collapse: separate;
+	border-spacing: 0px;
+}
+caption, th, td {
+	font-weight: normal;
+	text-align: left;
+}
+blockquote:before, blockquote:after, q:before, q:after {
+	content: "";
+}
+blockquote, q {
+	quotes: "" "";
+}
+p, th, td, li, dd, dt, ul, ol, blockquote, q, acronym, abbr, a, input, textarea {
+	margin: 0px;
+	padding: 0px;
+}
+form {
+	margin: 0px;
+	padding: 0px;
+}
+/*********************************************************************************************
+				                     reset style end
+**********************************************************************************************/
+
+@font-face {
+	font-family: coptic font;
+	font-style: normal;
+	font-weight: normal;
+	src: url("../Fonts/Antinoou.ttf");
+}
+@font-face {
+	font-family: hieroglyph font;
+	font-style: normal;
+	font-weight: normal;
+	src: url("../Fonts/EgyptianHieroglyphics-He.ttf");
+}
+@font-face {
+	font-family: yakout font;
+	font-style: normal;
+	font-weight: normal;
+	src: url("../Fonts/YakoutLinotypeLight-RegularKH.ttf");
+}
+body, p {
+	text-align: justify;
+}
+body, div {
+	text-align: justify;
+}
+/*********************************************************************************************
+							Fp page
+**********************************************************************************************/
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	line-height: 22px !important;
+	text-align: center;
+	/* min-height: 100%;height: 90%; */
+	vertical-align: bottom;
+	padding: 0px;
+    margin: 0 100px 0 100px;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+#wraper {
+	padding: 0;
+	width: 100%;
+	vertical-align: bottom;
+}
+#container {
+	padding: 0 0 0 0;
+	vertical-align: bottom;
+}
+h1 {
+	font-size: 1.5em;
+	font-weight: bold;
+}
+.top_3x100 {
+	margin-top: 3%;
+}
+.top_6x100 {
+	margin-top: 6%;
+}
+.top_8x100 {
+	margin-top: 8%;
+}
+.top_10X100 {
+	margin-top: 10%;
+}
+.top_15x100 {
+	margin-top: 65px;
+}
+h2 {
+	font-size: 22px;
+	line-height: 30px
+}
+h3 {
+	font-size: 22px;
+	line-height: 30px
+}
+.bold {
+	font-weight: bold;
+}
+/*
+.copyright {
+	background:url(../Images/Kalimat_Logo.png) bottom center no-repeat ;
+}
+*/
+.center {
+	text-align: center;
+}
+.left {
+	text-align: left;
+}
+.right {
+	text-align: right;
+}
+.float_left {
+	float: left;
+	direction: ltr !important;
+}
+.float_right {
+	float: right;
+	text-align: right;
+	direction: rtl;
+	margin-top: 10px;
+}
+.miscStyle17:first-child {
+	border-right: 12px solid black;
+	line-height: 30px;
+	margin-bottom: 10px;
+	padding-right: 12px;
+}
+.copyright_content .Div_P {
+	margin: 0px 0 0 0;
+	display: block;
+	text-align: right;
+}
+.copyright_content {
+border-right: 1px solid black !important;
+float: left;
+margin-right: 79px !important;
+padding: 0 20px 0 0;
+text-align: right;
+vertical-align: bottom;
+margin-top: 54px !important;
+font-size: 0.6em !important;
+width: 61.6% !important;
+padding-top: 24px !important;
+line-height: 17px;
+position: absolute;
+bottom: 114px;
+right: 89px;
+display: block;}
+
+.ddc {
+	float: left;
+	margin: -11px 0 0 0 !important;
+}
+div.body_area .float_right {
+	width: 100%
+}
+div.rights div.body_area {
+	padding-top: 40px;
+	bottom: 190px;
+}
+.block {
+	display: block
+}
+.en, .copyright_author_en, .copyright_title_en {
+	font-family: "Palatino";
+	text-align: left;
+	line-height: 16px !important;
+	margin-top: 10px !important;
+}
+.copyright_author_en {
+	margin-top: 3px !important;
+}
+hr {
+	border-top: 0 none;
+	border-left: 0 none;
+	border-right: 0 none;
+	border-bottom: 1px solid black;
+	width: 100%;
+	clear: both;
+	float: left;
+	margin: 5px 0;
+}
+.ident_40px {
+	padding-right: 40px;
+	clear: both;
+	display: block;
+	float: right;
+	width: 100%;
+}
+.ident_40px_nofloat {
+	padding-right: 40px;
+	clear: both;
+}
+.ident_20px {
+	padding-right: 20px;
+	clear: both;
+	display: block;
+	float: right;
+	width: 100%;
+}
+.clear {
+	clear: both
+}
+div.rights p {
+	font-size: 12px;
+	direction: rtl;
+	width: 100%;
+	float: right;
+	line-height: 16px
+}
+.float_left.en h3 {
+	margin: 9px 0 0;
+}
+a {
+	text-decoration: none;
+}
+.copyright_line {
+	margin: 12px 0;
+    border-top: 1px solid 
+#000;
+}
+.copyrightstatement span.Div_P, bdo {
+	margin: 0 !important;
+	font-family: "Palatino";
+	text-align: left;
+	direction: ltr;
+}
+.mediaobject:after {
+	clear: both
+}
+.mediaobject:before {
+	clear: both
+}
+.mediaobject {
+	width: 100% !important;
+	margin-right: 0% !important;
+}
+.copyrightstatement {
+	margin-top: 12px !important;
+}
+.copyrightstatement:last-child {
+	margin-top: -6px !important;
+}
+.title_main {
+	width: 100%;
+	margin-right: 0%;
+	margin-top: 59px
+}
+.copyright_content b:nth-child(2) {
+	margin-top: 12px;
+	display: block
+}
+p{text-align: justify}
+/*********************************************************************************************
+							inner pages
+**********************************************************************************************/
+html {
+padding: 125px 0px 115px 0px;
+min-height: 801px;min-width:764px;inline-block;
+}
+body{
+display:block;
+width:  auto;height: auto;}
+
+.title_number {
+	font-family: Verdana, Geneva, sans-serif;
+	font-weight: normal;
+	line-height: 24px;
+	font-size: 25px;
+	margin-bottom: -23px !important;
+	padding-top: 0;
+}
+.fb_site {
+font-size: 1.2em;
+font-style: normal;
+font-weight: normal;
+text-align: center;
+border: 0px solid;
+text-align: center;
+width: 217px !important;
+height: 100px;
+margin-top: 0;
+position: absolute;
+bottom: 115px;
+left: 36%;
+}
+.fb_site div {
+	width: 100% !important;
+	height: 100%;
+}
+table th,.table th{width:auto !important;}
+table {
+	border-collapse: collapse;
+	table-layout: fixed;
+	overflow: visible !important;
+}
+table td.textcenter, table th.textcenter {
+width: auto !important;
+white-space: pre;
+padding-right: 1em;
+}
+
+.black, .black body, .black body div{background-color:#000!important;color:white !important}
+.white, .white body, .white body div{background-color:white !important}
+.beig , .beig  body, .beig  body div{background-color:  #FBF0DA !important}
+.small ,.small p, .small body {font-size:16px }
+.normal,.normal p, .normal body {font-size:18px }
+.large ,.large p, .large body {font-size:21px }
+.black  .highlight{background-color: red} 
+.beig .highlight,.White .highlight,.highlight{background-color: yellow;}
+
+/*********************************************************************************************
+							Part nodes
+**********************************************************************************************/
+.part_main  /* for part title */ {
+	font-size: 1.2em;
+	font-weight: bold;
+	direction: rtl;
+	width: 80%;
+	margin-right: 10%;
+	margin-bottom: 3em;
+	margin-top: 2em;
+	text-align: center;
+	border: 0px solid;
+	line-height: 1.75em;
+}
+.part_number /* for the part number */ {
+	font-size: 1.2em;
+	font-weight: normal;
+	direction: rtl;
+	width: 80%;
+	margin-right: 10%;
+	margin-bottom: -1em;
+	margin-top: 2em;
+	text-align: center;
+}
+.part_date /* for the author text that appear centered in any place in the book*/ {
+	font-size: 1.1em;
+	direction: rtl;
+	width: 80%;
+	margin-right: 10%;
+	margin-top: -1.5em;
+	margin-bottom: 4em;
+	text-align: center;
+	border: 0px solid;
+}
+/*********************************************************************************************
+							Title nodes
+**********************************************************************************************/
+.title_author /* for the author text that appear centered in any place in the book*/ {
+	font-size: 1.3em;
+	direction: rtl;
+	width: 80%; /* 	margin-top: 2em;*/
+	margin-right: 10%;
+	text-align: center;
+	margin-top: -2.5em;
+	margin-bottom: 2em;
+	border: 0px solid;
+	line-height: 1.75em;
+}
+.title_address /* for the author text that appear centered in any place in the book*/ {
+	font-size: 1.1em;
+	direction: rtl;
+	width: 80%;
+	margin-right: 10%;
+	margin-top: -2em;
+	margin-bottom: 4em;
+	text-align: center;
+	border: 0px solid;
+}
+.title_date /* for the author text that appear centered in any place in the book*/ {
+	font-size: 1.1em;
+	direction: rtl;
+	width: 80%;
+	margin-right: 10%;
+	margin-top: 1em;
+	margin-bottom: 4em;
+	text-align: center;
+	border: 0px solid;
+}
+.title_publisher /* for publisher name that appear inside info (info that come inside in thing other than the main node)*/ {
+	font-size: 1.1em;
+	direction: rtl;
+	width: 80%;
+	margin-right: 10%;
+	margin-top: -2em;
+	margin-bottom: -0.9em;
+	text-align: center;
+	border: 0px solid;
+}
+.title_main /* for any title that appear in main parts (e.g chapter,info,part,preface ... )*/ {
+	/*
+	font-size: 1.2em !important;
+	font-weight: bold;
+	margin-bottom: 3em;
+	border:0px solid;
+	line-height:1.75em;
+*/
+	margin-right: 10%;
+	width: 80%;
+	direction: rtl;
+	text-align: center;
+}
+.title_number /* for the number of the chapter or parts (e.g ����� ����� .....)*/ {
+	font-size: 25px !important;
+	font-weight: bold;
+	direction: rtl;
+	width: 100%;
+	/*margin-right: 10%;
+	margin-top: 2em;
+	margin-bottom: 1em;*/
+	text-align: center;
+}
+.title /* for any title that appear inside any node (e.g sect1,sect2,itemizedlist,....) */ {
+	margin-top: 1.25em;
+	margin-bottom: 0.75em;
+	font-weight: bold;
+	direction: rtl;
+	line-height: 1.75em;
+	text-align: right;
+}
+.title_center /* for any title that appear inside any node (e.g figure,informalfigure,....) */ {
+	margin-bottom: 0.75em;
+	margin-top: 1.25em;
+	font-weight: bold;
+	direction: rtl;
+	text-align: center;
+	width: 80%;
+	margin-right: 10%;
+	border: 0px solid;
+	line-height: 1.75em;
+}
+/*********************************************************************************************
+							Subtitle nodes
+**********************************************************************************************/
+.subtitle_main /* for any subtitle that appear in main parts (e.g chapter,info,part,preface ... )*/ {
+	font-size: 1.2em;
+	direction: rtl;
+	width: 80%;
+	margin-right: 10%;
+	margin-bottom: 3em;
+	text-align: center;
+	margin-top: -2em;
+	line-height: 1.75em;
+}
+.subtitle /* for any subtitle that appear inside any node (e.g sect1,sect2,itemizedlist ...)*/ {
+	margin-top: 1.25em;
+	font-weight: bold;
+	direction: rtl;
+	line-height: 1.75em;
+	text-align: right;
+}
+.subtitle_center /* for any title that appear inside any node (e.g figure,informalfigure,....) */ {
+	margin-top: 1.25em;
+	font-weight: bold;
+	direction: rtl;
+	text-align: center;
+	width: 80%;
+	margin-right: 10%;
+	border: 0px solid;
+	line-height: 1.75em;
+}
+/****************************************************************************************************
+							Lists nodes
+*****************************************************************************************************/
+.itemized_list_en /* for english itemized list */ {
+	margin-top: 0.4em;
+	margin-left: 0.4em;
+	text-align: justify;
+	direction: ltr;
+}
+.itemized_list_ar /* for arabic itemized list */ {
+	margin-top: 0.4em;
+	margin-right: 0.4em;
+	text-align: justify;
+	direction: rtl;
+	line-height: 1.75em;
+}
+.ordered_list_en /* for english ordered list */ {
+	direction: ltr;
+}
+.ordered_list_ar /* for arabic ordered list */ {
+	direction: rtl;
+}
+.variable_list /* for variable list*/ {
+	line-height: 1.75em;
+	margin-top: 12px;
+}
+.variable_list div.Div_P {
+	margin-top: 12px;
+}
+/****************************************************************************************************
+							Images nodes
+*****************************************************************************************************/
+.mediaobject /* for media object node that come inside informalfigure*/ {
+	width: 80%;
+	height: 60%;
+	margin-right: 10%;
+	border: 0px solid;
+}
+.mediaobject p {
+	text-align: center;
+}
+.figurecaption {
+	text-align: center;
+	margin-top: -0.5em;
+	margin-bottom: 1em;
+	line-height: 1.5em;
+}
+.figure /* for image*/ {
+	margin-top: 1em;
+	margin-right: 0em;
+	margin-left: 0em;
+	margin-bottom: 1em;
+	border: 0px solid;
+}
+.inline_figure /* for image*/ {
+	border: 0px solid;
+	height: 1.2em;
+	display: inline;
+}
+.full-screen {
+	top: 0;
+	bottom: 0;
+	page-break-after: always;
+	page-break-before: always;
+}
+/****************************************************************************************************
+							Bridge head nodes
+*****************************************************************************************************/
+.bridge_head_en /* for english bridge head */ {
+	direction: ltr;
+	font-weight: bold;
+	margin-top: 1.25em;
+	text-align: left;
+}
+.bridge_head_ar /* for arabic bridge head */ {
+	direction: rtl;
+	font-weight: bold;
+	margin-top: 1.25em;
+	margin-bottom: 0.75em;
+	text-align: right;
+}
+.bridge_head_center  /* for bridge head center (******) */ {
+	width: 100%;
+	display: inline-block;
+	direction: rtl;
+	margin-top: 0.5em;
+}
+/****************************************************************************************************
+							Dialog nodes
+*****************************************************************************************************/
+.dialogue /* for linegroup that appear inside dialogue (e.g  dialogue/linegroup )*/ {
+	clear: both;
+	line-height: 1.75em;
+	margin-top: 0.75em;
+}
+.speaker /* for speaker inside linegroup inside dialogue (e.g  dialogue/linegroup/speaker )*/ {
+	font-weight: bold;
+	display: inline;
+}
+.speach /* for line inside linegroup inside dialogue (e.g  dialogue/linegroup/line )*/ {
+	display: inline;
+	border: 0px solid;
+	margin-bottom: 0.75em;
+}
+/****************************************************************************************************
+							Footnote nodes
+*****************************************************************************************************/
+.bookmargin /* for footnote (the box that contains all footnotes at the end of each chapter) */ {
+	font-size: 1em;
+	margin-top: 12px;
+	width: 100%;
+	line-height: 1.75em;
+}
+.bookmargin a /* for footnote (the anchor that appear inside bookmargin) */ {
+	font-size: 0.9em;
+	text-decoration: none;
+}
+.footnote a /* for footnote anchor*/ {
+	font-size: 0.9em;
+	text-decoration: none;
+}
+.footnote {
+	display: inline-block;
+}
+.footnote_line /* for footnote line (the line that appear at each chapter before writing footnotes)*/ {
+	border-top: 1px solid #CCCCCC;
+	height: 2px;
+	width: 25%;
+	margin-top: 2em;
+}
+/****************************************************************************************************
+							Table nodes
+*****************************************************************************************************/
+.table  /* for table and informaltable*/ {
+	width: auto;
+	margin: 1em auto;/*margin-bottom:1em;
+	margin-top:1em;*/
+}
+.table td /* for td that appear inside any table*/ {
+	line-height: 1.6em;
+	padding-left: 1em;
+	padding-top: 0.25em;
+	padding-bottom: 0.25em;
+	text-align: right;
+}
+.table th /* for th that appear inside any table*/ {
+	line-height: 1.5em;
+	padding-left: 1em;
+	padding-top: 0.25em;
+	padding-bottom: 0.25em;
+	text-align: right;/*width: 50%;*/
+}
+.table_caption {
+	text-align: center;
+	margin-bottom: -0.5em;
+	margin-top: 1em;
+	line-height: 1.5em;
+}
+/****************************************************************************************************
+							Maths and equations nodes
+*****************************************************************************************************/
+
+.inlineequation {
+	direction: rtl;
+	display: inline;
+}
+.inlineequation_en {
+	direction: ltr;
+	display: inline;
+	unicode-bidi: embed;
+}
+.mathphrase {
+	direction: rtl;
+}
+.mathphrase_en {
+	direction: ltr;
+}
+.equation {
+	direction: rtl;
+	margin-top: 1em;
+	margin-right: 0em;
+	margin-left: 0em;
+	margin-bottom: 1em;
+	border: 0px solid;
+}
+.equation_en {
+	direction: ltr;
+	margin-top: 1em;
+	margin-right: 0em;
+	margin-left: 0em;
+	margin-bottom: 1em;
+	border: 0px solid;
+}
+/****************************************************************************************************
+								General
+*****************************************************************************************************/
+.empty_line {
+	display: block;
+	height: 0em;
+	margin: 0em;
+	width: 80%;
+}
+.para_normal {
+	line-height: 1.75em;
+	margin-top: 0.75em;
+	margin-bottom: 0.75em;
+	font-weight: normal;
+	direction: rtl;
+}
+.para_normal_en {
+	line-height: 1.75em;
+	margin-top: 0.75em;
+	margin-bottom: 0.75em;
+	font-weight: normal;
+	direction: ltr;
+}
+.para_inline   /* for any para that should appear inline (e.g para with attribute stagedir after speaker node)*/ {
+	line-height: 1.75em;
+	display: inline;
+	font-weight: normal;
+}
+.section /* for sections (e.g sect1,sect2,sect3,.....) */ {
+	margin-top: 1.25em;
+	direction: rtl;
+}
+.section_center /* for sections that appear centered (e.g sect1,sect2,sect3,.....) */ {
+	margin-top: 1.25em;
+	direction: rtl;
+}
+.blockquote /* for blockquote */ {
+	display: block;
+	width: 90%;
+	padding-right: 5%;
+	padding-left: 5%;
+	direction: rtl;
+	border: 0px solid;
+	line-height: 1.75em;
+	margin-top: 0.75em;
+}
+.blockquote_en /* for blockquote */ {
+	display: block;
+	width: 90%;
+	padding-right: 5%;
+	padding-left: 5%;
+	direction: ltr;
+	border: 0px solid;
+	margin-top: 0.75em;
+}
+.epigraph /* for epigraph */ {
+	display: block;
+	width: 90%;
+	padding-right: 5%;
+	padding-left: 5%;
+	direction: rtl;
+	border: 0px solid;
+	margin-top: 0.75em;
+}
+.epigraph_en /* for epigraph */ {
+	display: block;
+	width: 90%;
+	padding-right: 5%;
+	padding-left: 5%;
+	direction: ltr;
+	border: 0px solid;
+	margin-top: 0.75em;
+}
+.epigraph_en p {
+	direction: ltr;
+}
+.attribution {
+	display: block;
+	width: 100%;
+	border: 0px solid;
+	overflow: hidden;
+}
+/*.attribution p 
+{
+	margin:0em 0.5em 0em 0.5em;
+	line-height:1.75em;
+	text-align: left;
+	display:block;
+	direction:ltr;
+}
+.attribution_en 
+{
+	display:block;
+	width:100%;
+	border:0px solid;	
+}
+/*.attribution_en p 
+{
+	margin:0em 0.5em 0em 0.5em;
+	line-height:1.75em;
+	text-align: right;
+	display:block;
+	direction:rtl;
+}*/
+.literal {
+	display: inline;
+}
+.phrase {
+	border: 0px solid;
+	display: block;
+	margin: 0em 0.5em 0em 0.5em;
+	line-height: 1.75em;
+}
+.question /* for question */ {
+	line-height: 1.75;
+}
+.wordasworddir   /* for word as word (english word that should appear as it is)*/ {
+	display: inline;
+	unicode-bidi: bidi-override;
+	direction: ltr;
+}
+.foreignphrase /* for foreignphrase */ {
+	display: inline;
+}
+.foreignphrase span {
+	display: inline;
+	padding: 0 3px;
+	direction: ltr;
+	unicode-bidi: bidi-override;
+}
+.figure_anchor /* for  xref */ {
+	text-decoration: none;
+}
+.note_warning {
+	direction: rtl;
+	line-height: 1.75em;
+	border: 1px solid;
+	padding-right: 1em;
+	padding-left: 1em;
+}
+.note_warning div {
+	margin-top: 1em;/*margin-bottom:0em;*/
+}
+.note_warning p {
+/*margin-top:0em;
+	margin-bottom:1em;*/
+}
+/****************************************************************************************************
+								Poetry nodes
+*****************************************************************************************************/
+.poetry_container {
+	display: block;
+	border: 0px solid;
+	line-height: 1.5em;
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+.poetry_modern {
+	display: block;
+	text-align: right;
+	line-height: 1.75em;
+}
+.poetry_modern_en {
+	display: block;
+	text-align: left;
+	direction: ltr;
+}
+.poetry_normal {
+	width: 100%;
+	display: inline-block;
+	text-align: center;
+	line-height: 1.5em;
+	margin-bottom: 0.5em;
+}
+.poetry_line {
+	width: 100%;
+	display: inline-block;
+	border: 0px solid;
+}
+.poetry_line_phrase_1 {
+	min-width: 45%;
+	max-width: 50%;
+	float: right;
+	margin-left: 5%;
+	border: 0px solid;/*text-align:left;
+	direction:ltr;*/
+}
+.poetry_line_phrase_2 {
+	min-width: 45%;
+	max-width: 50%;
+	margin-right: 4%;
+	float: left;
+	text-align: right;
+	border: 0px solid;
+	direction: rtl;
+}
+.poetry_line_phrase_3 {
+	min-width: 45%;
+	max-width: 50%;
+	float: right;
+	margin-left: 5%;
+	border: 0px solid;/*text-align:left;
+	direction:ltr;*/
+}
+.poetry_line_phrase_4 {
+	min-width: 45%;
+	max-width: 50%;
+	margin-right: 4%;
+	float: left;
+	text-align: right;
+	border: 0px solid;
+	margin-bottom: 1em;
+	direction: rtl;
+}
+@media only screen and (orientation:portrait) {
+.poetry_line {
+	width: 100%;
+	display: inline-block;
+}
+.poetry_line_phrase_1 {
+	min-width: 45%;
+	max-width: 50%;
+	float: right;
+	margin-left: 5%;
+	border: 0px solid;/*text-align:left;
+		direction:ltr;*/
+}
+.poetry_line_phrase_2 {
+	min-width: 45%;
+	max-width: 50%;
+	margin-right: 4%;
+	float: left;
+	text-align: right;
+	border: 0px solid;
+	direction: rtl;
+}
+.fb_title {
+	font-size: 1.5em;
+	font-weight: bold;
+	direction: rtl;
+	margin-top: 2em;
+	text-align: center;
+	width: 100%;
+	border: 0px solid;
+}
+/*.fb_author
+	{
+		font-size: 1.3em;
+		font-style:normal;
+		font-weight:normal;
+		direction: rtl;
+		margin-top: 2em;
+		text-align: center;
+		width:100%;
+		border:0px solid;
+	}
+	.fb_site
+	{
+		font-size: 1.2em;
+		font-style:normal;
+		font-weight:normal;
+		direction:rtl;
+		text-align:center;
+		bottom:0px;
+		position:fixed;
+		width:80%;
+		margin-left:10%;
+		margin-right:10%;
+		border:0px solid;
+	}
+	*/
+}
+/* ===== edits ===== */
+
+.en:last-child {
+	margin-top: 12px;
+}
+#wraper.copyright {
+	background: url(../Images/Hindawi_Kalimat_Final_2.svg) 168px 728px no-repeat;
+	padding: 0 0 0px 0;
+	overflow: visible;
+	box-sizing: border-box;
+}
+.title_main {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 25px !important;
+	margin-bottom: 100px;
+	font-weight: bold;
+	line-height: 34px;
+}
+center.intorduction_title {
+	margin-top: 150px;
+	margin-bottom: 24px;
+	text-align: center;
+}
+.extra {
+	padding-top: 150px;
+}
+.introduction {
+	padding-top: 150px;
+	margin-bottom: 24px;
+}
+.title_address {
+	margin-top: 10px;
+}
+.body_area {
+	margin-top: 267px;
+}
+.translator {
+	margin-top: 60px;
+}
+.top_6x100 {
+	margin-top: 30px;
+}
+div.para_normal {
+	font-family: Verdana, Geneva, sans-serif;
+	text-align: justify;
+	position: relative;
+}
+div.para_normal div.para_normal {
+	padding: 0 !important;
+}
+.bookmargin /* for footnote (the box that contains all footnotes at the end of each chapter) */ {
+	font-family: Verdana, Geneva, sans-serif !important;
+	text-align: right !important;
+}
+table {
+	border-collapse: collapse;
+	table-layout: fixed;
+}
+table thead {
+	border-top: solid 1px #000000;
+	border-bottom: solid 1px #000000;
+}
+table tr {
+}
+table td.textcenter, table th.textcenter {
+	text-align: center;
+	padding-left: 0;
+}
+table td.textright, table th.textright {
+	text-align: right;
+}
+tr.miscStyle3 {
+	border-bottom: solid 1px #000000;
+}
+h1.miscStyle14 {
+	font-size: inherit;
+}
+div.copyright img {
+	position: absolute;
+	bottom: 121px;
+	left: 268px;
+}
+div.bookmargin a {
+	padding-right: 100px;
+	position: relative;
+	right: -100px;
+	display: inline-block;
+	margin-left: -100px;
+}
+span.link_footnote {
+	position: absolute;
+	left: -100px;
+	display: block;
+	width: 1px;
+	height: 1px;
+}

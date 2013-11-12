@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>8E633726-B1E0-4A93-8CCA-107E815E634F</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Kalimat</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>77CD9686-9088-41DD-ABE6-C0DE4BE90B7D</key>
+		<string>http://tfs.hindawi.org:81/svn/IOS/KalimatReader/trunk/Kalimat</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Kalimat.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>77CD9686-9088-41DD-ABE6-C0DE4BE90B7D</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectRepositoryRootDictionary</key>
+	<dict>
+		<key>77CD9686-9088-41DD-ABE6-C0DE4BE90B7D</key>
+		<string>http://tfs.hindawi.org:81/svn/IOS</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>http://tfs.hindawi.org:81/svn/IOS/KalimatReader/trunk/Kalimat/Kalimat.xcodeproj</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>77CD9686-9088-41DD-ABE6-C0DE4BE90B7D</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryBranchesRelativeLocationKey</key>
+			<string>KalimatReader/branches</string>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.subversion</string>
+			<key>IDESourceControlRepositoryTagsRelativeLocationKey</key>
+			<string>KalimatReader/tags</string>
+			<key>IDESourceControlRepositoryTrunkRelativeLocationKey</key>
+			<string>KalimatReader/trunk</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>77CD9686-9088-41DD-ABE6-C0DE4BE90B7D</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Kalimat</string>
+		</dict>
+	</array>
+</dict>
+</plist>

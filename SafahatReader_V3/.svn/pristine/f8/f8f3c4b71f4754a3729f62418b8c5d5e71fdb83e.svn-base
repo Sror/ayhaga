@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+            <title>Fist Page</title>
+            <script>
+                function testSp()
+                {
+                    
+                    window.location.href = "finish";
+                }
+                window.onload=testSp;
+                </script>
+            <style>
+                html, body {
+                    margin: 0;
+                    padding: 0;
+                    direction: rtl;
+                }
+                div.container {
+                    width: 720px;
+                    margin: 0 auto;
+                    padding: 0 24px;
+                }
+                div.inner_container {
+                    background-color:rgba(255,255,255,0.95);
+                    padding: 42px 0 24px 0;
+                    margin: 0 0 24px 0;
+                }
+                div.inner_container h1 {
+                    font-family: Adobe Arabic;
+                    font-size: 30px;
+                    font-weight: bold;
+                    line-height: 0;
+                    color: #000;
+                    width: 100%;
+                    display: block;
+                    text-align: center;
+                    margin: 0 0 40px 0;
+                }
+                div.inner_container ul {
+                    margin: 0 24px 28px 0;
+                    padding: 0 0 0 24px;
+                    list-style: none;
+                    list-style-position: inside;
+                }
+                div.inner_container ul li {
+                    background: url(bullet_small.png) right 11px no-repeat;
+                    font-family: Adobe Arabic;
+                    font-size: 20px;
+                    font-weight: bold;
+                    line-height: 30px;
+                    color: #373737;
+                    margin-bottom: 16px;
+                    padding-right: 18px;
+                }
+                div.inner_container ul li span {
+                    color: #6d1d2d;
+                }
+                div.inner_container div {
+                    width: 222px;
+                    height: 90px;
+                    display: block;
+                    margin: 0 auto;
+                    clear: both;
+                    background: url(ornament.svg) left top no-repeat;
+                    text-align: center;
+                }
+                
+                </style>
+    </head>
+    
+    <body>
+        
+        
+        <div class="container">
+            
+            <div class="inner_container">
+                
+                <h1>محتويات العدد</h1>
+                
+            <ul>

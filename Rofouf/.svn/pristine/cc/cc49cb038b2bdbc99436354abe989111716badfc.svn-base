@@ -1,0 +1,80 @@
+//
+//  AppDelegate.m
+//  Refof
+//
+//  Created by Mohamed Alaa El-Din on 11/6/13.
+//  Copyright (c) 2013 Mohamed Alaa El-Din. All rights reserved.
+//
+
+#import "AppDelegate.h"
+
+@implementation AppDelegate
+@synthesize navigationController,loginViewController,homeViewController;
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+    
+    DBSession* dbSession = [[DBSession alloc] initWithAppKey:@"0ocifrsqmpavocl" appSecret:@"emsp4gcsih0f7oh" root:kDBRootAppFolder];
+    [DBSession setSharedSession:dbSession];
+    
+    self.window                 = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.backgroundColor = [UIColor whiteColor];
+    
+    homeViewController  = [[[HomeViewController alloc] init] autorelease];
+    loginViewController = [[[LoginViewController alloc] init] autorelease];
+    
+    if ([[DBSession sharedSession] isLinked])
+         navigationController = [[[UINavigationController alloc] initWithRootViewController:homeViewController] autorelease];
+    else
+         navigationController = [[[UINavigationController alloc] initWithRootViewController:loginViewController] autorelease];
+    
+    navigationController.navigationBar.hidden = YES;
+    self.window.rootViewController            = navigationController;
+    [self.window makeKeyAndVisible];
+    
+    return YES;
+}
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+{
+    if ([[DBSession sharedSession] handleOpenURL:url])
+    {
+        if ([[DBSession sharedSession] isLinked])
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"succeedToLogin" object:nil userInfo:nil];
+        else
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"failedToLogin" object:nil userInfo:nil];
+        
+        return YES;
+    }
+    return NO;
+}
+
+
+
+- (void)applicationWillResignActive:(UIApplication *)application
+{
+    // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
+    // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
+}
+
+- (void)applicationDidEnterBackground:(UIApplication *)application
+{
+    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
+    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+}
+
+- (void)applicationWillEnterForeground:(UIApplication *)application
+{
+    // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+}
+
+- (void)applicationDidBecomeActive:(UIApplication *)application
+{
+    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+}
+
+- (void)applicationWillTerminate:(UIApplication *)application
+{
+    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+@end

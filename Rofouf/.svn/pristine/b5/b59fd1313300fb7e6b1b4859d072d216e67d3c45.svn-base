@@ -1,0 +1,235 @@
+//
+//  HomeViewController.m
+//  RefofDemo
+//
+//  Created by Mohamed Alaa El-Din on 11/6/13.
+//  Copyright (c) 2013 Mohamed Alaa El-Din. All rights reserved.
+//
+
+#import "HomeViewController.h"
+#import "XMLReader.h"
+#import <QuartzCore/QuartzCore.h>
+#import "UIImageView+AFNetworking.h"
+#import "NetworkService.h"
+#import "CacheManager.h"
+#import "UserDefaults.h"
+#import "UIDevice.h"
+#import <AdSupport/AdSupport.h>
+#import "ArabicConverter.h"
+#import "UsageData.h"
+#import <CommonCrypto/CommonDigest.h>
+
+
+@interface HomeViewController ()
+@property (nonatomic, strong) LoginViewController *loginViewController;
+@end
+
+@implementation HomeViewController
+@synthesize loginViewController, reusableCells, issuesFileNamesArray, restClient, mainTableView, articlesStillDownloading, loadMoreBtn, moreIssuesArray, indicatorBgView, indicatorView , activityView, refofLabel, issuesFileUrlsArray;
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        // Custom initialization
+    }
+    return self;
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    // refof Label
+    ArabicConverter *converter = [[ArabicConverter alloc] init] ;
+    refofLabel.text = [converter convertArabic:@"رفوف"];
+    refofLabel.font =  [UIFont fontWithName:Font size:72];
+    
+    self.issuesFileNamesArray     = [NSMutableArray array];
+    self.issuesFileUrlsArray      = [NSMutableArray array];
+    self.articlesStillDownloading = [NSMutableArray array];
+    
+    [[self restClient] loadMetadata:@"/"];
+
+    issuesCount      = 0 ;
+    issuePagingIndex = 1 ;
+    sectionSize      = 4;
+    [self getIssues:issuePagingIndex withPageSize:1000];
+    
+    [self.view bringSubviewToFront:indicatorView];
+    indicatorView.hidden = YES ;
+    
+    UITapGestureRecognizer *Tapped = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(stopShaking)];
+    Tapped.numberOfTapsRequired = 2;
+    Tapped.delegate = self;
+    [self.view addGestureRecognizer:Tapped];
+}
+
+
+////////////////////////////// metadata deleget////////////////////////////
+- (void)restClient:(DBRestClient *)client loadedMetadata:(DBMetadata *)metadata {
+    if (metadata.isDirectory) {
+       
+        for (DBMetadata *file in metadata.contents)
+        {
+            [self.issuesFileNamesArray addObject:file.filename];
+            [[self restClient] loadStreamableURLForFile:[NSString stringWithFormat:@"/%@",file.filename]];
+        }
+    }   
+    [self getReusableCells];
+}
+
+/////////////////////////////// load loadStreamable//////////////////////
+- (void)restClient:(DBRestClient*)restClient loadStreamableURLFailedWithError:(NSError *)error
+{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"خطأ" message:@"خطأ في تحميل الملفات يرجى معاودة التحميل!" delegate:nil cancelButtonTitle:@"تم" otherButtonTitles:nil, nil];
+    [alert show];
+    [alert release];
+   // NSLog(@"%@", [error localizedDescription]);
+}
+
+-(void)restClient:(DBRestClient *)restClient loadedStreamableURL:(NSURL *)url forFile:(NSString *)path
+{
+    [issuesFileUrlsArray addObject:[url absoluteURL]];
+}
+
+-(void)getIssues:(int)pageIndex withPageSize:(int)pageSize
+{
+    int noOfSections  = self.issuesFileNamesArray.count/sectionSize;
+    if( ([self.issuesFileNamesArray count] % sectionSize)!= 0 )
+        noOfSections ++;
+    
+    if( [self.issuesFileNamesArray count] >= issuesCount )
+    {
+        loadMoreBtn.hidden = YES ;
+        thereMoreIssues    = NO;
+    }
+    else
+    {
+        loadMoreBtn.hidden = NO ;
+        thereMoreIssues    = YES;
+    }
+}
+
+
+-(void)getReusableCells
+{
+    self.reusableCells=[NSMutableArray array];
+    
+    if ([self.issuesFileNamesArray count] == 1)
+    {
+        HorizontalTableCell *cell              = [[HorizontalTableCell alloc] initWithIsLastCategory:NO];
+        cell.viewController                    = self;
+        cell.horizontalTableView.contentOffset = CGPointMake(0, [self.issuesFileNamesArray count]*189);
+        cell.issuesFileNamesArray              = issuesFileNamesArray;//[NSArray arrayWithArray:issuesFileNamesArray];
+        cell.delegate = self ;
+        [self.reusableCells addObject:cell];
+        [cell release];
+    }
+    else
+    {
+        for (int i = 1; i <= [self.issuesFileNamesArray count]; i++)
+        {
+            i--;
+            BOOL isStart = YES;
+            HorizontalTableCell *cell = [[HorizontalTableCell alloc] initWithIsLastCategory:NO];
+            cell.viewController       = self;
+            cell.horizontalTableView.contentOffset=CGPointMake(0, [self.issuesFileNamesArray count]*189);
+            NSMutableArray *rowBooks = [NSMutableArray array];
+            while (i % sectionSize !=0 || isStart)
+            {
+                isStart = NO;
+                if (i < [self.issuesFileNamesArray count])
+                {
+                    [rowBooks addObject:[self.issuesFileNamesArray objectAtIndex:i]];
+                    i++;
+                }
+                else
+                    break;
+            }
+            
+            cell.issuesFileNamesArray = [NSArray arrayWithArray:rowBooks];
+            cell.delegate             = self ;
+            [self.reusableCells addObject:cell];
+            [cell release];
+        }
+    }
+    
+    [self.mainTableView reloadData];
+    indicatorView.hidden = YES ;
+    [activityView stopAnimating];
+}
+
+
+- (DBRestClient *)restClient
+{
+    if (!restClient)
+    {
+        restClient          = [[DBRestClient alloc] initWithSession:[DBSession sharedSession]];
+        restClient.delegate = self;
+    }
+    return restClient;
+}
+
+
+- (IBAction)logout:(id)sender
+{
+    [[DBSession sharedSession] unlinkAll];
+    loginViewController = [[[LoginViewController alloc] init] autorelease];
+    [self.navigationController pushViewController:loginViewController animated:YES];
+}
+
+// MD5
+
+- (NSString *) md5:(NSString *) input
+{
+    const char *cStr = [input UTF8String];
+    unsigned char digest[16];
+    CC_MD5( cStr, strlen(cStr), digest ); // This is the md5 call
+    
+    NSMutableString *output = [NSMutableString stringWithCapacity:CC_MD5_DIGEST_LENGTH * 2];
+    
+    for(int i = 0; i < CC_MD5_DIGEST_LENGTH; i++)
+        [output appendFormat:@"%02x", digest[i]];
+    
+    return  output;
+}
+
+// Main TableView Delegate
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    HorizontalTableCell *cell = [self.reusableCells objectAtIndex:indexPath.section];
+    [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+    return cell;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 1;
+}
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [cell setBackgroundColor:[UIColor blackColor]];
+    
+}
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return [self.reusableCells count];
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return  240 ;
+}
+
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+}
+
+- (void)dealloc {
+    [mainTableView release];
+    [super dealloc];
+}
+@end
